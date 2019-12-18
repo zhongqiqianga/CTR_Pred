@@ -28,7 +28,6 @@ def martix(R, P, Q, K, alpha, beta):
                         Q[k][j] = Q[k][j] + alpha * (2 * eij * P[i][k] - beta * Q[k][j])
         print('迭代轮次:', steps, '   e:', e)
         result.append(e)  # 将每一轮更新的损失函数值添加到数组result末尾
-
         # 当损失函数小于一定值时，迭代结束
         if eij < 0.00001:
             break
