@@ -1,13 +1,11 @@
-import os
 import numpy as np
 import pandas as pd
 import tensorflow as tf
-from sklearn.metrics import make_scorer
 from sklearn.model_selection import StratifiedKFold
 from CTR_Prediction.AFM import AFM
-from DataReader import FeatureDictionary, DataParser
-from matplotlib import pyplot as plt
-import config
+from CTR_Prediction.DeepFM.DataReader import FeatureDictionary, DataParser
+from CTR_Prediction.DeepFM import config
+
 
 def load_data():
     dfTrain = pd.read_csv(config.TRAIN_FILE)
@@ -78,7 +76,7 @@ pnn_params = {
     "batch_norm":1,
     "batch_norm_decay":0.995,
     "verbose":True,
-    "random_seed":config.RANDOM_SEED,
+    "random_seed": config.RANDOM_SEED,
     "deep_init_size":50,
     "use_inner":False
 

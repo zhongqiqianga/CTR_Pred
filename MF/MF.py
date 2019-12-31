@@ -21,7 +21,6 @@ def martix(R, P, Q, K, alpha, beta):
                     for k in range(K):
                         # 在上面的误差函数中加入正则化项防止过拟合
                         e = e + (beta / 2) * (pow(P[i][k], 2) + pow(Q[k][j], 2))
-
                     for k in range(K):
                         # 在更新p,q时我们使用化简得到了最简公式
                         P[i][k] = P[i][k] + alpha * (2 * eij * Q[k][j] - beta * P[i][k])
